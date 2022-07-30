@@ -29,10 +29,7 @@ namespace DotNetKorea.Models.Agreements
             return aggrement;
         }
 
-        public List<Agreement> GetAll()
-        {
-            return db.Query<Agreement>("SELECT * FROM Agreements Order By AgreementId Desc").ToList();
-        }
+        public List<Agreement> GetAll() => db.Query<Agreement>("SELECT * FROM Agreements Order By AgreementId Desc").ToList();
 
         public Agreement Find(int id)
         {
