@@ -11,14 +11,14 @@ namespace DotNetKorea.Models.Agreements
     /// </summary>
     public class AgreementRepository : IAgreementRepository
     {
+        private readonly IDbConnection db = new SqlConnection();
+        private string _connectionString;
+
         public AgreementRepository(string connectionString)
         {
             _connectionString = connectionString;
             db = new SqlConnection(connectionString);
         }
-
-        private IDbConnection db = new SqlConnection();
-        private string _connectionString;
 
         public Agreement Add(Agreement aggrement)
         {
