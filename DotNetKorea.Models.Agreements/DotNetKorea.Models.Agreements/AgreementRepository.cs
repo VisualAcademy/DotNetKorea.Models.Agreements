@@ -47,10 +47,7 @@ namespace DotNetKorea.Models.Agreements
             return aggrement;
         }
 
-        public void Remove(int id)
-        {
-            db.Execute("DELETE FROM Agreements WHERE AgreementId = @AgreementId", new { id });
-        }
+        public void Remove(int id) => db.Execute("DELETE FROM Agreements WHERE AgreementId = @AgreementId", new { id });
 
         // 가장 최근 약관
         public Agreement GetRecentlyAgreement()
